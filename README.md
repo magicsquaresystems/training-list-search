@@ -9,7 +9,7 @@ A client maintains a spreadsheet of orders that shows the products that have bee
 3. Display the orders table in a web page
 4. Allow the user to filter orders by customer name and/or product code
 
-The sample code contains all the MVC source code and database to get you started. The database is located in the Db folder
+This repository contains all the MVC application and database to get you started. The database is located in the Db folder
 
 # Prerequisites
 You will need to be setup with the following to complete this task:
