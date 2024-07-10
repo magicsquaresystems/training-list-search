@@ -17,6 +17,6 @@ You will need to be setup with the following to complete this task:
 4. Internet Information Services (IIS) or personal webserver for running/testing/debugging your work
 
 # Get started
-This repository is a sample MVC application, simply clone the repo to get started. The database and spreadsheet are located in the Data folder.
+This repository is a sample MVC application, simply clone the repo to get started. The database and spreadsheet are located in the Data folder. You'll be expected to use entity framework to complete the solution.
 
 Once you have created your orders web page, push a new branch using this format: review/your_name (e.g. review/joe_bloggs)
