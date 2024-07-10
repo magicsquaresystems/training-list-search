@@ -1,0 +1,39 @@
+﻿@model UserListModel
+@{
+    ViewBag.Title = "User List";
+}
+@section Breadcrumb {
+    <li class="active">Users</li>
+}
+
+<section class="clearfix bg-dark dashboardOrders">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                @Html.Partial("Partials/_UserSearch", Model.Search)
+            </div>
+            <div class="col-xs-12">
+                <div class="table-responsive bgAdd" data-pattern="priority-columns">
+                    <table id="ordersTable" class="table table-small-font table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>User Id</th>
+                                <th>First name</th>
+                                <th>Last name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Users) {
+                                <tr>
+                                    <td>@item.UserId</td>
+                                    <td>@item.FirstName</td>
+                                    <td>@item.LastName</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
