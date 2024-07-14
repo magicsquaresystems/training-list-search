@@ -127,10 +127,17 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Domain\Context\ApplicationDbContext.cs" />
     <Compile Include="Domain\Entities\ApplicationUser.cs" />
+    <Compile Include="Domain\Entities\Order.cs" />
+    <Compile Include="Domain\Entities\Product.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Enums.cs" />
+    <Compile Include="Migrations\202407141958364_m2.cs" />
+    <Compile Include="Migrations\202407141958364_m2.Designer.cs">
+      <DependentUpon>202407141958364_m2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\UserViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -164,6 +171,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202407141958364_m2.resx">
+      <DependentUpon>202407141958364_m2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
