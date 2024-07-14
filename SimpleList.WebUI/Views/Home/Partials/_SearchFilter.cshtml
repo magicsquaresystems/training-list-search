@@ -1,0 +1,53 @@
+﻿<style>
+
+    .search-form {
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+        .search-form .form-control {
+            border-radius: 4px;
+        }
+
+        .search-form .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+
+    .search-buttons {
+        margin-top: 20px;
+    }
+</style>
+
+
+<form class="search-form" method="get">
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="customerSearch">Customer Name</label>
+            <input type="text" class="form-control" id="customerSearch" name="customerSearch" placeholder="Enter customer name" value="@ViewBag.CustomerSearch">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="productSearch">Product Search</label>
+            <input type="text" class="form-control" id="productSearch" name="productSearch" placeholder="Enter product code, brand, or description" value="@ViewBag.ProductSearch">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="searchOperation">Search Type</label>
+            <select class="form-control" id="searchOperation" name="searchOperation">
+                <option value="AND" @(ViewBag.SearchOperation == "AND" ? "selected" : "")>AND</option>
+                <option value="OR" @(ViewBag.SearchOperation == "OR" ? "selected" : "")>OR</option>
+            </select>
+        </div>
+    </div>
+    <div class="row search-buttons">
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary btn-block">Search</button>
+        </div>
+        <div class="col-md-6">
+            <a href="@Url.Action("Index")" class="btn btn-secondary btn-block">Reset</a>
+        </div>
+    </div>
+</form>
