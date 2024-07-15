@@ -1,4 +1,4 @@
-﻿using SimpleList.Domain.Entities;
+﻿using SimpleList.WebUI.Domain.Entities;
 using System.Data.Entity;
 
 namespace SimpleList.Domain.Concrete
@@ -9,11 +9,26 @@ namespace SimpleList.Domain.Concrete
         {
         }
 
-        public DbSet<ApplicationUser> Users { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
            base.OnModelCreating(modelBuilder);
+
+            //modelBuilder.Entity<User>()
+            //  .HasKey(c => c.UserId)
+            //  .HasMany(c => c.Orders)
+            //  .WithRequired(o => o.User)
+            //  .HasForeignKey(o => o.UserId);
+
+          
+
+            //modelBuilder.Entity<Order>()
+            //    .HasKey(o => o.OrderID);
+
         }
     }
 }

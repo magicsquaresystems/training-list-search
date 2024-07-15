@@ -1,4 +1,4 @@
-﻿using SimpleList.Domain.Entities;
+﻿using SimpleList.WebUI.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,14 +9,16 @@ namespace SimpleList.WebUI.Models
 {
     public class UserListModel
     {
-        public IEnumerable<ApplicationUser> Users { get; set; }
+        public IEnumerable<User> Users { get; set; }
 
         public UserSearchModel Search { get; set; }
-    }
 
-    public class UserSearchModel
-    {
-        [Display(Name = "Name", Prompt = "e.g. Matt or Matthew")]
-        public string Name { get; set; }
     }
+}
+
+public class UserSearchModel
+{
+    [Display(Name = "Name", Prompt = "e.g. Matt or Matthew")]
+    public string Name { get; set; }
+
 }

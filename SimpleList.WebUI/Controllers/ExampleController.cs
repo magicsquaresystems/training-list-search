@@ -12,17 +12,28 @@ namespace SimpleList.WebUI.Controllers
         // GET: /users
         public ActionResult Users(UserSearchModel search)
         {
+
             var users = db.Users
                 .OrderBy(o => o.LastName)
                 .ThenBy(o => o.FirstName)
                 .ToList();
-            var model = new UserListModel {
+
+            if (!string.IsNullOrEmpty(search.Name))
+            {
+                users = db.Users.Where(x => x.FirstName.Contains(search.Name) || x.LastName.Contains(search.Name))
+                .OrderBy(o => o.LastName)
+                .ThenBy(o => o.FirstName)
+                .ToList(); 
+            }
+
+                var model = new UserListModel
+            {
                 Users = users,
                 Search = search
             };
 
             SetNavOption(NavOption.Examples);
             return View(model);
-        }
+        } 
     }
 }

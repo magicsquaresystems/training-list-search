@@ -1,0 +1,46 @@
+﻿@model OrderSearchModel
+
+@using (Html.BeginForm("Index", "Home"))
+{
+    <div class="dashboardBoxBg mb30">
+        <div class="profileIntro">
+            <div class="row">
+                <div class="form-group col-md-4 col-sm-6 col-xs-12">
+                    <div class="input-group">
+                        <span class="input-group-addon">@Html.DisplayNameFor(m => m.Name)</span>
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Search By Product Or Customer" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4 col-sm-6 col-xs-12">
+                    <div class="input-group">
+                        <div>
+                            @Html.DropDownListFor(m => m.SearchByValue, Model.SearchByList, "Search By", new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4 col-sm-6 col-xs-12">
+                    <button type="submit" class="btn btn-primary">
+                        Search
+                        <i class="fa fa-search"></i>
+                    </button>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+}
+
