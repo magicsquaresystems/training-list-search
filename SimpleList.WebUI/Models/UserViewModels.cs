@@ -19,4 +19,14 @@ namespace SimpleList.WebUI.Models
         [Display(Name = "Name", Prompt = "e.g. Matt or Matthew")]
         public string Name { get; set; }
     }
+
+    public class OrderViewModel
+    {
+        public int OrderId { get; set; }
+        public string CustomerName { get; set; }
+        public string ProductCode { get; set; }
+        public string Brand { get; set; }
+        public string ProductDescription { get; set; }
+        public decimal Cost { get; set; }
+    }
 }
