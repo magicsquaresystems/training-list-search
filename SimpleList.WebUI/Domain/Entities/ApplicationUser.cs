@@ -11,6 +11,7 @@ namespace SimpleList.Domain.Entities
     public class ApplicationUser
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
 
         [StringLength(50)]

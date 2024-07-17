@@ -213,27 +213,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Enums.cs" />
-    <Compile Include="Migrations\202407122021237_InitialCreate.cs" />
-    <Compile Include="Migrations\202407122021237_InitialCreate.Designer.cs">
-      <DependentUpon>202407122021237_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202407122348374_OrderIdAutoGenerate.cs" />
-    <Compile Include="Migrations\202407122348374_OrderIdAutoGenerate.Designer.cs">
-      <DependentUpon>202407122348374_OrderIdAutoGenerate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202407132037228_ModifyOrderIdGeneration.cs" />
-    <Compile Include="Migrations\202407132037228_ModifyOrderIdGeneration.Designer.cs">
-      <DependentUpon>202407132037228_ModifyOrderIdGeneration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202407132044412_RemoveOrderIdGeneration.cs" />
-    <Compile Include="Migrations\202407132044412_RemoveOrderIdGeneration.Designer.cs">
-      <DependentUpon>202407132044412_RemoveOrderIdGeneration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202407132054298_DatabaseGen.cs" />
-    <Compile Include="Migrations\202407132054298_DatabaseGen.Designer.cs">
-      <DependentUpon>202407132054298_DatabaseGen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\OrderViewModel.cs" />
     <Compile Include="Models\UserViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -271,23 +250,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202407122021237_InitialCreate.resx">
-      <DependentUpon>202407122021237_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202407122348374_OrderIdAutoGenerate.resx">
-      <DependentUpon>202407122348374_OrderIdAutoGenerate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202407132037228_ModifyOrderIdGeneration.resx">
-      <DependentUpon>202407132037228_ModifyOrderIdGeneration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202407132044412_RemoveOrderIdGeneration.resx">
-      <DependentUpon>202407132044412_RemoveOrderIdGeneration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202407132054298_DatabaseGen.resx">
-      <DependentUpon>202407132054298_DatabaseGen.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

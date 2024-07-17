@@ -7,6 +7,7 @@ namespace SimpleList.Domain.Entities
     public class Customer
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CustomerId { get; set; }
 
         public string Name { get; set; }

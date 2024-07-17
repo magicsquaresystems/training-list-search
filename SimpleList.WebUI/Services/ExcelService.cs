@@ -84,6 +84,11 @@ namespace SimpleList.WebUI.Services
                                             _dbContext.SaveChanges();
                                         }
 
+                                        // Save the user id against the cutomer record
+                                        Console.WriteLine($"Setting userId for customer {customerName} to {user.UserId}");
+                                        customer.UserId = user.UserId;
+                                        _dbContext.SaveChanges();
+
                                         // Read product details
                                         string productCode = reader.GetString(2);
                                         Product product = _dbContext.Products.FirstOrDefault(p => p.ProductCode == productCode);
@@ -132,16 +137,21 @@ namespace SimpleList.WebUI.Services
                                         // Read order id
                                         int orderId = Convert.ToInt32(reader.GetValue(0));
 
-                                        // Create new Order and add to DbContext
-                                        Order order = new Order
-                                        {
-                                            OrderId = orderId,
-                                            CustomerId = customer.CustomerId,
-                                            ProductCode = product.ProductCode // Assuming you want to keep product code in order
-                                        };
+                                        // Has order been created
+                                        Order order = _dbContext.Orders.Find(orderId);
 
-                                        _dbContext.Orders.Add(order);
-                                        _dbContext.SaveChanges();
+                                        if (order == null) {
+                                            // Create new Order and add to DbContext
+                                            order = new Order
+                                            {
+                                                OrderId = orderId,
+                                                CustomerId = customer.CustomerId,
+                                                ProductCode = product.ProductCode // Assuming you want to keep product code in order
+                                            };
+
+                                            _dbContext.Orders.Add(order);
+                                            _dbContext.SaveChanges();
+                                        }
                                     }
                                     catch (Exception ex)
                                     {
